@@ -4,6 +4,7 @@ import NavBar from './components/navigation'
 import Login from './authentication/login'
 import Signup from './authentication/signup'
 import LandingPage from './mainpage/landingpage'
+import ForgotPassword from './authentication/forgot-password'
 import './App.css'
 
 function App() {
@@ -11,11 +12,14 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      
       <Routes>
-        <Route path='/' element={<LandingPage/>}/>
+        <Route path='/' element={<><NavBar />
+        <LandingPage/>
+        </>}/>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
     </>
   )
